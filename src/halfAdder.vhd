@@ -7,11 +7,22 @@
 --| Computer Engineering              / / / /\__ \/ /| | / /_  / /| |
 --| 2354 Fairchild Drive Ste 2F6     / /_/ /___/ / ___ |/ __/ / ___ |
 --| USAF Academy, CO 80840           \____//____/_/  |_/_/   /_/  |_|
---| 
+--|
+--| FILENAME      : halfAdder.vhd
+--| AUTHOR(S)     : Sweta Chandra Mohan
+--| CREATED       : 01/22/2017
+--| DESCRIPTION   : This file implements a one bit half adder.
+--|
+--| DOCUMENTATION : None 
 --| ---------------------------------------------------------------------------
 --|
 --| DESCRIPTION   : This file implements a one bit half adder.
 --|
+--| REQUIRED FILES :
+--|
+--|    Libraries : ieee
+--|    Packages  : std_logic_1164, numeric_std, unisim
+--|    Files     : NONE
 --+----------------------------------------------------------------------------
 --|
 --| NAMING CONVENSIONS :
@@ -29,19 +40,21 @@ entity halfAdder is
   port(
 	i_A     : in  std_logic; -- 1-bit input port
 	i_B     : in  std_logic; 
-	o_S     : out std_logic  -- 1-bit output port (NOTE: NO semicolon on LAST port only!)	    
+	o_S     : out std_logic;-- 1-bit output port (NOTE: NO semicolon on LAST port only!)	    
 	-- TODO:  Carry port
+	o_Cout  : out std_logic
   ); -- the semicolon is here instead
 end halfAdder;
 
 architecture halfAdder_arch of halfAdder is 
 	-- this is where you would include components declarations and signals, but we don't need them for this
 	  
-begin
+begin 
 	-- this is where you would map ports for any component instantiations, but we don't need them for this
 
 	-- *concurrent* signal assignments
 	o_S    <= i_A xor i_B;
+	o_Cout    <= i_A xor i_B;
 	-- TODO:  Carry signal assignment
 	
 end halfAdder_arch;
